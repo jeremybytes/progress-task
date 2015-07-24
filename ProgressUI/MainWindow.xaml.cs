@@ -15,13 +15,15 @@ namespace ProgressUI
 
         private void BadProgressButton_Click(object sender, RoutedEventArgs e)
         {
-            var task = Task.Run(() => StartLongProcess(new Progress<string>(UpdateProgress)));
+            var task = Task.Run(() => 
+                StartLongProcess(new Progress<string>(UpdateProgress)));
         }
 
         private void GoodProgressButton_Click(object sender, RoutedEventArgs e)
         {
             var progress = new Progress<string>(UpdateProgress);
-            var task = Task.Run(() => StartLongProcess(progress));
+            var task = Task.Run(() => 
+                StartLongProcess(progress));
         }
 
         private void StartLongProcess(IProgress<string> progress)
